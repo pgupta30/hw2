@@ -98,6 +98,7 @@
 Studio.destroy_all
 Movie.destroy_all
 Actor.destroy_all
+Role.destroy_all
 
 new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
@@ -170,4 +171,74 @@ new_actor_11 = Actor.new
 new_actor_11["name"] = "Anne Hathaway"
 new_actor_11.save
 
-# puts "There are #{Studio.all.count} studios in the table."
+movie_1 = Movie.find_by({ "title" => "Batman Begins" })
+movie_2 = Movie.find_by({ "title" => "The Dark Knight" })
+movie_3 = Movie.find_by({ "title" => "The Dark Knight Rises" })
+actor_1 = Actor.find_by({ "name" => "Christian Bale"})
+actor_2 = Actor.find_by({ "name" => "Michael Caine"})
+actor_3 = Actor.find_by({ "name" => "Liam Neeson"})
+actor_4 = Actor.find_by({ "name" => "Katie Holmes"})
+actor_5 = Actor.find_by({ "name" => "Gary Oldman"})
+actor_6 = Actor.find_by({ "name" => "Heath Ledger"})
+actor_7 = Actor.find_by({ "name" => "Aaron Eckhart"})
+actor_8 = Actor.find_by({ "name" => "Maggie Gyllenhaal"})
+actor_9 = Actor.find_by({ "name" => "Tom Hardy"})
+actor_10 = Actor.find_by({ "name" => "Joseph Gordon-Levitt"})
+actor_11 = Actor.find_by({ "name" => "Anne Hathaway"})
+
+new_role = Role.new
+new_role["movie_id"] = movie_1["id"]
+new_role["actor_id"] = actor_1["id"]
+new_role.save
+
+new_role_2 = Role.new
+new_role_2["movie_id"] = movie_2["id"]
+new_role_2.save
+
+new_role_3 = Role.new
+new_role_3["movie_id"] = movie_3["id"]
+new_role_3.save
+
+# new_role_4 = Role.new
+# new_role_4["actor_id"] = actor_1["id"]
+# new_role_4.save
+
+# new_role_5 = Role.new
+# new_role_5["movie_id"] = movie_3["id"]
+# new_role_5.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
+
+# new_role_3 = Role.new
+# new_role_3["movie_id"] = movie_3["id"]
+# new_role_3.save
