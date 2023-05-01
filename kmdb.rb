@@ -79,18 +79,95 @@
 # TODO!
 
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+# puts "Movies"
+# puts "======"
+# puts ""
 
-# Query the movies data and loop through the results to display the movies output.
-# TODO!
+# # Query the movies data and loop through the results to display the movies output.
+# # TODO!
 
-# Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# # Prints a header for the cast output
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+Studio.destroy_all
+Movie.destroy_all
+Actor.destroy_all
+
+new_studio = Studio.new
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+studio = Studio.find_by({ "name" => "Warner Bros." })
+
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = 2005
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = studio["id"]
+new_movie.save
+
+new_movie_2 = Movie.new
+new_movie_2["title"] = "The Dark Knight"
+new_movie_2["year_released"] = 2008
+new_movie_2["rated"] = "PG-13"
+new_movie_2["studio_id"] = studio["id"]
+new_movie_2.save
+
+new_movie_3 = Movie.new
+new_movie_3["title"] = "The Dark Knight Rises"
+new_movie_3["year_released"] = 2012
+new_movie_3["rated"] = "PG-13"
+new_movie_3["studio_id"] = studio["id"]
+new_movie_3.save
+
+new_actor = Actor.new
+new_actor["name"] = "Christian Bale"
+new_actor.save
+
+new_actor_2 = Actor.new
+new_actor_2["name"] = "Michael Caine"
+new_actor_2.save
+
+new_actor_3 = Actor.new
+new_actor_3["name"] = "Liam Neeson"
+new_actor_3.save
+
+new_actor_4 = Actor.new
+new_actor_4["name"] = "Katie Holmes"
+new_actor_4.save
+
+new_actor_5 = Actor.new
+new_actor_5["name"] = "Gary Oldman"
+new_actor_5.save
+
+new_actor_6 = Actor.new
+new_actor_6["name"] = "Heath Ledger"
+new_actor_6.save
+
+new_actor_7 = Actor.new
+new_actor_7["name"] = "Aaron Eckhart"
+new_actor_7.save
+
+new_actor_8 = Actor.new
+new_actor_8["name"] = "Maggie Gyllenhaal"
+new_actor_8.save
+
+new_actor_9 = Actor.new
+new_actor_9["name"] = "Tom Hardy"
+new_actor_9.save
+
+new_actor_10 = Actor.new
+new_actor_10["name"] = "Joseph Gordon-Levitt"
+new_actor_10.save
+
+new_actor_11 = Actor.new
+new_actor_11["name"] = "Anne Hathaway"
+new_actor_11.save
+
+# puts "There are #{Studio.all.count} studios in the table."
