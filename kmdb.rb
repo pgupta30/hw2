@@ -278,3 +278,34 @@ new_role_15["movie_id"] = movie_3["id"]
 new_role_15["actor_id"] = actor_11["id"]
 new_role_15["character_name"] = "Selina Kyle"
 new_role_15.save
+
+puts "Movies"
+puts "======"
+puts ""
+
+warnerbros = Studio.find_by({ "name" => "Warner Bros." })
+movie_warnerbros = Movie.where({ "studio_id" => warnerbros["id"] })
+
+for warnerbros in movie_warnerbros
+    title = warnerbros["title"]
+    year = warnerbros["year_released"]
+    rating = warnerbros["rated"]
+    studio = "Warner Bros."
+    puts "#{title} #{year} #{rating} #{studio}"
+end
+
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
+
+batmanbegins = Movie.find_by({ "title" => "Batman Begins" })
+role_batmanbegins = Role.where({ "movie_id" => batmanbegins["id"]})
+role_batmanbegins.all.inspect
+
+
+# for roles in batmanbegins
+#     title = roles["title"]
+#     name = roles["name"]
+#     puts "#{title} #{name}"
+# end
