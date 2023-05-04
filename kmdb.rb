@@ -299,13 +299,13 @@ puts "Top Cast"
 puts "========"
 puts ""
 
-batmanbegins = Movie.find_by({ "title" => "Batman Begins" })
-role_batmanbegins = Role.where({ "movie_id" => batmanbegins["id"]})
-role_batmanbegins.all.inspect
+batman_begins = Movie.find_by({ "title" => "Batman Begins" })
+# role_batman_begins = Role.where({ "movie_id" => batman_begins["id"] })
+# actor_batman_begins = Actor.where({ "id" => role_batman_begins["actor_id"]})
 
-
-# for roles in batmanbegins
-#     title = roles["title"]
-#     name = roles["name"]
-#     puts "#{title} #{name}"
-# end
+for batman_begins in role_batman_begins
+    title = "Batman Begins"
+    name = actor_batman_begins["name"]
+    # role = batman_begins["character_name"]
+    puts "#{title} #{name} #{role}"
+end
