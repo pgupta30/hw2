@@ -301,21 +301,43 @@ puts ""
 
 batman_begins = Movie.find_by({ "title" => "Batman Begins" })
 role_batman_begins = Role.where({ "movie_id" => batman_begins["id"] })
-puts actor_batman_begins.inspect
+# puts actor_batman_begins.inspect
 
 for batman_begins in role_batman_begins
     title = "Batman Begins"
     name = batman_begins["character_name"]
-    puts "#{title} #{name}"
+    if name == "Bruce Wayne"
+        actor_name = "Christian Bale"
+    elsif name == "Alfred"
+        actor_name = "Michael Caine"
+    elsif name == "Ra's Al Ghul"
+        actor_name = "Liam Neeson"
+    elsif name == "Rachel Dawes"
+        actor_name = "Katie Holmes"
+    elsif name == "Commissioner Gordon"
+        actor_name = "Gary Oldman"
+    end
+    puts "#{title} #{actor_name} #{name}"
 end
 
 the_dark_knight = Movie.find_by({ "title" => "The Dark Knight" })
-role_the_dark_knight = Role.where({ "movie_id" => the_dark_knight["id"]})
+role_the_dark_knight = Role.where({ "movie_id" => the_dark_knight["id"] })
 
 for the_dark_knight in role_the_dark_knight
     title = "The Dark Knight"
     name = the_dark_knight["character_name"]
-    puts "#{title} #{name}"
+    if name == "Bruce Wayne"
+        actor_name = "Christian Bale"
+    elsif name == "Joker"
+        actor_name = "Heath Ledger"
+    elsif name == "Harvey Dent"
+        actor_name = "Aaron Eckhart"
+    elsif name == "Alfred"
+        actor_name = "Michael Caine"
+    elsif name == "Rachel Dawes"
+        actor_name = "Maggie Gyllenhaal"
+    end
+    puts "#{title} #{actor_name} #{name}"
 end
 
 the_dark_knight_rises = Movie.find_by({ "title" => "The Dark Knight Rises" })
@@ -324,5 +346,16 @@ role_the_dark_knight_rises = Role.where({ "movie_id" => the_dark_knight_rises["i
 for the_dark_knight_rises in role_the_dark_knight_rises
     title = "The Dark Knight Rises"
     name = the_dark_knight_rises["character_name"]
-    puts "#{title} #{name}"
+    if name == "Bruce Wayne"
+        actor_name = "Christian Bale"
+    elsif name == "Commissioner Gordon"
+        actor_name = "Gary Oldman"
+    elsif name == "Bane"
+        actor_name = "Tom Hardy"
+    elsif name == "John Blake"
+        actor_name = "Joseph Gordon-Levitt"
+    elsif name == "Selina Kyle"
+        actor_name = "Anne Hathaway"
+    end
+    puts "#{title} #{actor_name} #{name}"
 end
