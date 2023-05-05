@@ -300,13 +300,28 @@ puts "========"
 puts ""
 
 batman_begins = Movie.find_by({ "title" => "Batman Begins" })
-actor_batman_begins = Actor.where({ "id" => batman_begins["actor_id"]})
-role_batman_begins = Role.where({ "movie_id" => batman_begins["id"], "actor_id" => actor_batman_begins["id"] })
-
+role_batman_begins = Role.where({ "movie_id" => batman_begins["id"]})
 
 for batman_begins in role_batman_begins
     title = "Batman Begins"
-    name = role_batman_begins["name"]
-    role = role_batman_begins["character_name"]
-    puts "#{title} #{name} #{role}"
+    name = batman_begins["character_name"]
+    puts "#{title} #{name}"
+end
+
+the_dark_knight = Movie.find_by({ "title" => "The Dark Knight" })
+role_the_dark_knight = Role.where({ "movie_id" => the_dark_knight["id"]})
+
+for the_dark_knight in role_the_dark_knight
+    title = "The Dark Knight"
+    name = the_dark_knight["character_name"]
+    puts "#{title} #{name}"
+end
+
+the_dark_knight_rises = Movie.find_by({ "title" => "The Dark Knight Rises" })
+role_the_dark_knight_rises = Role.where({ "movie_id" => the_dark_knight_rises["id"]})
+
+for the_dark_knight_rises in role_the_dark_knight_rises
+    title = "The Dark Knight Rises"
+    name = the_dark_knight_rises["character_name"]
+    puts "#{title} #{name}"
 end
