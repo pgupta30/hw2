@@ -300,7 +300,8 @@ puts "========"
 puts ""
 
 batman_begins = Movie.find_by({ "title" => "Batman Begins" })
-role_batman_begins = Role.where({ "movie_id" => batman_begins["id"]})
+role_batman_begins = Role.where({ "movie_id" => batman_begins["id"] })
+puts actor_batman_begins.inspect
 
 for batman_begins in role_batman_begins
     title = "Batman Begins"
